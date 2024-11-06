@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>luas dan keliling ruang bangun persegi</title>
+  <style>
+    *{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+   .tengah{
+    display: flex;
+    justify-content: center;  
+   }
+   .card{
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0 0.2);
+    transition: 0.3s;
+   }
+   #txBARU{
+    font-size: 20px;
+   }
+   .cardbody{
+    padding: 2px 16px;
+   }
+   .cardfooter{
+    padding: 8px;
+    background-color: aqua;
+    display: flex;
+    justify-content: right;
+   }
+   label{
+    font-weight: bold;
+    font-size: 14px;
+   }
+   input[type=text]{
+    width: 100%;
+    padding: 2px;
+    margin: 8px 0px;
+   }
+   button{
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    background-color: darkorange;
+    color: blue;
+    font-weight: bold;
+   }
+  </style>
+</head>
+<body>
+
+<div class="tengah">
+
+<div class="card">
+  <h1 id="txBARU">ruang bangun persegi</h1>
+ <div class="cardbody">
+
+
+  <form>
+    <label>nilai panjang (meter) </label>
+    <input type="text" nama="txPANJANG" id="txPANJANG">
+    <label> nilai lebar (meter) </label>
+    <input type="text" nama="txLEBAR" id="txLEBAR">
+  </form>
+
+  <div id="txHASIL"> nilai luas dan keliling</div>
+</div>
+<div class="cardfooter">
+  <button onclick="pesan()">hitung luas dan keliling </button>
+ </div>
+</div>
+</div>
+<script>
+  function pesan(){
+  //alert("on progres")
+  let PJ = document.getElementById("txPANJANG").value
+  let LB = document.getElementById("txLEBAR").value
+
+  //proses hitung luas
+   let luas = PJ*LB
+   let PJLB = parseFloat (PJ) + Number(LB)
+   let kel = 2*PJLB
+
+   let hsl ="hitung luas persegi<br>luas = panjang X lebar<br>"
+   hsl += "luas = "+PJ+"M X "+LB+"M<br>" 
+   hsl += "luas = "+luas+"M<sup>2</sup><br>"
+   hsl += "hitung keliling persegi<br>"
+   hsl += "keliling = 2 X (panjang+lebar)<br>"
+   hsl += "keliling = 2 X (" +PJ+ "+" +LB+ ")<br>"
+   hsl += "keliling = 2 X " +PJLB+ "<br>"
+   hsl += "keliling = "+kel+"meter"
+   
+   
+
+  document.getElementById("txHASIL").innerHTML=hsl 
+  }
+</script>
+
+</body>
+</html>
